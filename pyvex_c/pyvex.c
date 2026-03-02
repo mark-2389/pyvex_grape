@@ -81,6 +81,8 @@ static void log_bytes(const HChar* bytes, SizeT nbytes) {
 
 void clear_log() {
 	if (msg_buffer != NULL) {
+			msg_buffer[msg_current_size] = '\0';
+			printf("%s\n", msg_buffer);
 			free(msg_buffer);
 			msg_buffer = NULL;
 			msg_capacity = 0;
